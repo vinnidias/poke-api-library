@@ -6,32 +6,30 @@ import axios from 'axios'
 
 
 function App() {
-  const pokeList = ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "caterpie", "metapod", "butterfree", "weedle", "kakuna", "beedrill", "pidgey", "pidgeotto", "pidgeot", "rattata", "raticate"]
+  const [pokeList, setList] = useState([])
+  
 
   useEffect(()=>{
-    axios.get('https://pokeapi.co/api/v2/pokemon/')
+    axios.get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151")
       .then(res=>{
         const list = res.data.results
-        
-        list.map(item=>{
-          pokeList.push(item.name)
-        })
-        console.log(pokeList)
+        setList(list)
+        console.log('console da lista',pokeList)
       })
-  },[pokeList])
+  },[])
 
   return (
     <div>
       <header className="header-container">
         <img src={logo} className="logo-img" />
       </header>
-      <div>
-
+      <div className="search-container">
+        
       </div>
       <div className="cards-container">
         {
           pokeList.map(item => (
-            <CardPreView id={item}/>
+            <CardPreView id={item.name}/>
           ))
         }
       </div>
