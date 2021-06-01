@@ -1,0 +1,16 @@
+.card-preview {
+    width: 200px;
+    height: 200px;
+    background-color: #32E038;
+    border-radius: 20px;
+    justify-content: center;
+    display: flex;
+}
+
+.card-preview:hover {
+   transform: scale(1.05);
+}
+
+.poke-img {
+    align-self: center;
+}
