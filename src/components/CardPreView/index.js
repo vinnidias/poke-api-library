@@ -89,14 +89,16 @@ export default function CardPreView({id}) {
         .then(res => {
             const img = res.data.sprites.front_default
             const type = res.data.types[0].type.name
-            console.log('type: ',type)
             getBackgroundFromType(type)
             setImg(img)
+        })
+        .catch(err => {
+            window.alert('No Pokémon found with that name!')
         })
     },[])
     return (
         <div className="card-preview" style={{backgroundColor: background}} >
-            <img src={img} className="poke-img"/>
+            <img src={img} className="poke-img" alt="Pokémon"/>
         </div>
     )
 }
