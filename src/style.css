@@ -16,6 +16,24 @@
   padding-top: 3.125rem;
 }
 
+.search-container {
+  height: 4rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px;
+  margin-left: 100px;
+}
+
+.search-container input {
+  width: 30.5rem;
+  height: 2rem;
+  border-color: rgba(235, 179, 179, 1);
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+}
+
 .cards-container {
   padding: 30px;
   display: grid;
